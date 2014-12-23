@@ -155,11 +155,13 @@ public class CaveServer {
 
 				if (r.hasWumpus) {
 					kill();
+					r.leaveRoom(client);
 					client.died();
 				}
 
 				if (r.hasPit) {
 					kill();
+					r.leaveRoom(client);
 					client.died();
 				}
 
@@ -223,15 +225,17 @@ public class CaveServer {
 
 									if (r.hasWumpus) {
 										kill();
+										r.leaveRoom(client);
 										client.died();
 									}
 
 									if (r.hasPit) {
 										kill();
+										r.leaveRoom(client);
 										client.died();
 									}
 
-									if (r.hasBats) {
+									while (r.hasBats) {
 										roomNum = (int) (Math.random() * 20);
 										r.leaveRoom(client);
 										r = rooms.get(roomNum);
@@ -240,14 +244,15 @@ public class CaveServer {
 
 										if (r.hasWumpus) {
 											kill();
+											r.leaveRoom(client);
 											client.died();
 										}
 
 										if (r.hasPit) {
 											kill();
+											r.leaveRoom(client);
 											client.died();
 										}
-
 									}
 								} else {
 									ArrayList<String> msg = new ArrayList<String>();
