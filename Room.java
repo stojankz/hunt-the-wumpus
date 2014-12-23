@@ -116,12 +116,6 @@ public class Room {
 		this.hasArrow = true;
 	}
 	
-//	public void shoot(Arrows arrow){
-//		while(arrow.getHopsRemaining()> 0){
-//			
-//		}
-//	}
-	
 	/** Returns a string describing what a player sees in this room. */
 	public synchronized ArrayList<String> getSensed() {
 		ArrayList<String> msg = new ArrayList<String>();
